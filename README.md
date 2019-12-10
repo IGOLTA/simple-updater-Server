@@ -10,4 +10,3 @@ To use simple-updater server you just copy the repository to an [Apache](https:/
 - [x] Return json files list
 - [x] Return MD5 checksum
 - [ ] Customize the folder's name
-- [ ] Create UI version
