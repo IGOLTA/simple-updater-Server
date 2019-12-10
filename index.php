@@ -33,8 +33,11 @@
 
         return $results;
     }
-
-    mkdir($base_dir);
+    
+    if(!file_exists($base_dir)){
+        mkdir($base_dir);
+    }
+    
 
     $files = scan_dir_r($base_dir);
     $json = array();
@@ -48,5 +51,5 @@
 
     $json["checksums"] = $checksums;
 
-    echo(str_replace("\\\\", "/", json_encode($json)));
+    echo(json_encode($json));
 ?>
