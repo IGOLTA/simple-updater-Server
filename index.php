@@ -46,7 +46,7 @@
 
     $checksums = array();
     foreach($files as $element){
-        $checksums[$element] = md5_file($element);
+        $checksums[str_replace("\\/", "\\\\", $element)] = md5_file($element);
     }
 
     $json["checksums"] = $checksums;
