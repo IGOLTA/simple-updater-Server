@@ -47,7 +47,8 @@
 
     $checksums = array();
     foreach($files as $element){
-        $index = str_replace("/", "\\", $element);
+        $index = $element;
+        $index = str_replace("/", "\\", $index);
         $checksums[$index] = md5_file($element);
     }
 
