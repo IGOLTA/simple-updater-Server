@@ -26,6 +26,7 @@
         foreach($files as $element){
             if(!is_dir($element)){
                 $element = str_replace_first(realpath(".")."\\", "", $element);
+		$element = str_replace_first(realpath(".")."/", "", $element);
 
                 array_push($results, $element);
             }
