@@ -26,6 +26,7 @@
         foreach($files as $element){
             if(!is_dir($element)){
                 $element = str_replace_first(realpath(".")."\\", "", $element);
+                $element = str_replace("/", "\\", $element);
 
                 array_push($results, $element);
             }
@@ -46,7 +47,7 @@
 
     $checksums = array();
     foreach($files as $element){
-        $checksums[str_replace("\\/", "\\\\", $element)] = md5_file($element);
+        $checksums[$element] = md5_file($element);
     }
 
     $json["checksums"] = $checksums;
